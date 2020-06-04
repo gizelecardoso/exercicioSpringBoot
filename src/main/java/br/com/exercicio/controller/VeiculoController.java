@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.exercicio.model.Veiculo;
-import br.com.exercicio.repository.VeiculoRepository;
+import br.com.exercicio.service.VeiculoService;
 
 @Controller
 @RequestMapping
 public class VeiculoController {
 
 	@Autowired
-	private VeiculoRepository repository;
+	private VeiculoService serviceVeiculo;
 	
 	@GetMapping("/veiculo")
 	public ModelAndView findAllVeiculos() {
-		List<Veiculo> veiculos = repository.findAll();
-		ModelAndView mv = new ModelAndView();
+		List<Veiculo> veiculos = serviceVeiculo.findVeiculos();
+		ModelAndView mv = new ModelAndView("veiculo");
 		mv.addObject("veiculos", veiculos);
 		mv.addObject(new Veiculo());
 		return mv;
@@ -30,7 +30,7 @@ public class VeiculoController {
 	
 	@PostMapping("/veiculo")
 	public String createVeiculo(Veiculo veiculo) {
-		repository.save(veiculo);
+		serviceVeiculo.saveVeiculo(veiculo);
 		return "redirect:/veiculo";
 	}
 	

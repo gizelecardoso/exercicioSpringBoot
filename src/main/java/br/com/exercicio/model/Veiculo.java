@@ -17,6 +17,9 @@ public class Veiculo implements Serializable{
 	private String marca;
 	private Integer anoDeFabricacao;
 	private String cor;
+	private Double litro;
+	private Double consumo;
+	private Double autonomia;
 	
 	public Long getId() {
 		return id;
@@ -48,4 +51,23 @@ public class Veiculo implements Serializable{
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
+	public Double getLitro() {
+		return litro;
+	}
+	public void setLitro(double litro) {
+		this.litro = litro;
+	}
+	public Double getConsumo() {
+		return consumo;
+	}
+	public void setConsumo(double consumo) {
+		this.consumo = consumo;
+	}
+	public Double getAutonomia() {
+		return autonomia;
+	}
+	public void setAutonomia(double autonomia) {
+		this.autonomia = autonomia;
+	}
+	
 }

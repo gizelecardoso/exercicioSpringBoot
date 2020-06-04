@@ -23,8 +23,10 @@
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Modelo" th:field="*{modelo}"/>
 						<input type="text" class="form-control" placeholder="Marca" th:field="*{marca}"/>
-						<input type="text" class="form-control" placeholder="Ano de Facricação" th:field="*{anoDeFabricacao}"/>
+						<input type="text" class="form-control" placeholder="Ano de Fabricação" th:field="*{anoDeFabricacao}"/>
 						<input type="text" class="form-control" placeholder="Cor" th:field="*{cor}"/>
+						<input type="text" class="form-control" placeholder="Litro (l)" th:field="*{litro}"/>
+						<input type="text" class="form-control" placeholder="Consumo (km/l)" th:field="*{consumo}"/>
 						<button type="submit" class="btn btn-primary">Adicionar</button>
 					</div>
 				</form>
@@ -36,6 +38,7 @@
 							<th>Marca</th>
 							<th>Ano de Fabricação</th>
 							<th>Cor</th>
+							<th>Autonomia</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -44,6 +47,7 @@
 							<td th:text="${veiculo.marca}"></td>
 							<td th:text="${veiculo.anoDeFabricacao}"></td>
 							<td th:text="${veiculo.cor}"></td>
+							<td th:text="${veiculo.autonomia}"></td>
 						</tr>
 					</tbody>
 				</table>
